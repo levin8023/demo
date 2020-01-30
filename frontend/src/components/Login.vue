@@ -1,37 +1,37 @@
 <template>
   <div id="login">
-    <!-- <div class="ibg-bg-login"> -->
-    <div :style="{'background-image': 'url('+ baseUrl + banner +') '}">
-      <div class="login-container">
-        <div class="con-box" content="center" style="right: 6%;position: absolute;">
-          <div style="margin-top: 50px;text-align:center">
-            <span>手机号密码登陆</span>
-          </div>
-          <div>
-            <el-form status-icon ref="ruleForm2" class="demo-ruleForm">
-              <el-form-item label="手机号">
-                <el-input type="text" v-model="userName" placeholder="用户名"></el-input>
-              </el-form-item>
-              <el-form-item prop="checkPass" label="密码">
-                <el-input type="password" v-model="userPassword" placeholder="密码"></el-input>
-              </el-form-item>
-              <el-form-item>
-                <el-button type="primary" @click="login()" style="width: 100%;">登陆</el-button>
-              </el-form-item>
-              <!-- <div style="display: flex;flex-direction: row">
+    <div class="ibg-bg-login">
+      <div class="login-bg">
+        <div class="login-container">
+          <div class="con-box" content="center" style="right: 6%;position: absolute;">
+            <div style="margin-top: 50px;text-align:center">
+              <span>手机号密码登陆</span>
+            </div>
+            <div>
+              <el-form status-icon ref="ruleForm2" class="demo-ruleForm">
+                <el-form-item label="手机号">
+                  <el-input type="text" v-model="userName" placeholder="用户名"></el-input>
+                </el-form-item>
+                <el-form-item prop="checkPass" label="密码">
+                  <el-input type="password" v-model="userPassword" placeholder="密码"></el-input>
+                </el-form-item>
+                <el-form-item>
+                  <el-button type="primary" @click="login()" style="width: 100%;">登陆</el-button>
+                </el-form-item>
+                <!-- <div style="display: flex;flex-direction: row">
                   <el-form-item>
                     <el-button type="text" @click="register">立即注册</el-button>
                   </el-form-item>
                   <el-form-item style="margin-left: 185px;">
                     <el-button type="text" @click="forgetPassword">忘记密码</el-button>
                   </el-form-item>
-              </div>-->
-            </el-form>
+                </div>-->
+              </el-form>
+            </div>
           </div>
         </div>
       </div>
     </div>
-    <!-- </div> -->
   </div>
 </template>
 
@@ -43,9 +43,7 @@ export default {
   data() {
     return {
       userName: '',
-      userPassword: '',
-      baseUrl: 'static/img/',
-      banner: 'background6.jpg'
+      userPassword: ''
     }
   },
   components: {
@@ -73,14 +71,19 @@ export default {
 </script>
 
 <style scoped>
+.login-bg {
+  background-image: url('../../static/img/background6.jpg');
+  background-size: contain;
+}
 .ibg-bg-login {
   /*position:fixed;*/
   position: absolute;
-  top: 60px;
+  /* top: 60px; */
   left: 0;
   width: 100%;
-  height: 700px;
-  min-width: 1100px;
+  /* height: 700px; */
+  height: 100%;
+  /* min-width: 1100px; */
   z-index: -10;
   zoom: 1;
   background-color: #fff;

@@ -36,43 +36,39 @@
 </template>
 
 <script>
-import md5 from 'js-md5'
-import foot from '../components/Footer.vue'
+import md5 from "js-md5";
 export default {
   created() {},
   data() {
     return {
-      userName: '',
-      userPassword: ''
-    }
-  },
-  components: {
-    foot
+      userName: "",
+      userPassword: ""
+    };
   },
   methods: {
     login() {
       let param = {
         userName: this.userName,
         userPassword: md5(this.userPassword).toUpperCase()
-      }
-      this.postRequest('login', param).then(res => {
-        console.log('res-->', res)
+      };
+      this.postRequest("login", param).then(res => {
+        console.log("res-->", res);
         if (res) {
           this.$message({
-            message: '登录成功',
-            type: 'success'
-          })
+            message: "登录成功",
+            type: "success"
+          });
         }
-      })
-      console.log(param)
+      });
+      console.log(param);
     }
   }
-}
+};
 </script>
 
 <style scoped>
 .login-bg {
-  background-image: url('../../static/img/background6.jpg');
+  background-image: url("../static/img/background6.jpg");
   background-size: contain;
 }
 .ibg-bg-login {
